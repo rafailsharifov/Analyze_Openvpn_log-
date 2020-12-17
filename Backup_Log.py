@@ -3,7 +3,7 @@ import paramiko
 from Send_email import if_error_occured #Send_email.py is another script file that sends email
 from Hashing import decrypt #Hashing is another Hashing.py file that encrypt and decrypt passwords. For security reasons i cant attach here.
 
-host_name = "10.124.49.12"
+host_name = "192.168.0.1"
 
 
 try:
