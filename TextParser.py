@@ -10,7 +10,7 @@ try:
 
         log_file = open("/root/log_files/openvpn.log", 'r', errors='replace') #Read log file
         sorted_by_date = open("/root/log_files/Sorted_by_date.txt", 'w') #creat output file sorted by date
-        sorted_by_ATM = open("/root/log_files/Sorted_by_Client_name.txt", 'w') #creat output file sorted by VPN client name
+        sorted_by_Client_name = open("/root/log_files/Sorted_by_Client_name.txt", 'w') #creat output file sorted by VPN client name
         a_week_ago = datetime.today() - relativedelta(weeks=1)  #find date that is a week ago
 
         sort1_list = []
