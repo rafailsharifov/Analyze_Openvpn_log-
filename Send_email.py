@@ -8,7 +8,7 @@ from email import encoders
 from Hashing import decrypt #Calls Hashing.py for decrypting credentials
 
 def mail_host():
-    host = "mail.asb.az"
+    host = "mail.gmail.com"
     return host
 
 
@@ -16,7 +16,7 @@ def if_error_occured (got_error, error):
     if got_error:
         #When error occur before log files is made ready
 
-        send_to = ["rafail.sharifov@asb.az"]
+        send_to = ["test.mail@gmail.com"]
         subject = "I got error"
         message =  'I got error below: \n' + error + """\n
          I need your help please
@@ -27,10 +27,10 @@ def if_error_occured (got_error, error):
         # Everything is okay and i am going to send email to receivers
 
 
-        send_to = ["rafail.sharifov@asb.az"]
-        subject = "ATM weekly log"
+        send_to = ["test.mail@gmail.com"]
+        subject = "VPN client weekly log"
         message = "This message was sent by avtomation tool created by Rafail"
-        files = ["/root/log_files/Sorted_by_date.txt", "/root/log_files/Sorted_by_ATM.txt"]
+        files = ["/root/log_files/Sorted_by_date.txt", "/root/log_files/Sorted_by_Client_name.txt"]
 
     send_mail(send_to,subject, message, files)
 
