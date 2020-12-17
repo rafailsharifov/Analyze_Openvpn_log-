@@ -10,7 +10,7 @@ try:
 
         log_file = open("/root/log_files/openvpn.log", 'r', errors='replace') #Read log file
         sorted_by_date = open("/root/log_files/Sorted_by_date.txt", 'w') #creat output file sorted by date
-        sorted_by_ATM = open("/root/log_files/Sorted_by_ATM.txt", 'w') #creat output file sorted by VPN client name
+        sorted_by_ATM = open("/root/log_files/Sorted_by_Client_name.txt", 'w') #creat output file sorted by VPN client name
         a_week_ago = datetime.today() - relativedelta(weeks=1)  #find date that is a week ago
 
         sort1_list = []
@@ -88,13 +88,13 @@ try:
                 dict1[time_dict[key[0]]] = new_row_dict[key[0]]
                 dict2[atm_name[key[0]]] = dict1
 
-        yaml.dump(dict2, sorted_by_ATM, allow_unicode=True, sort_keys=False) #Write to a file as tree form
+        yaml.dump(dict2, sorted_by_Client_name, allow_unicode=True, sort_keys=False) #Write to a file as tree form
 
 
 
         log_file.close()
         sorted_by_date.close()
-        sorted_by_ATM.close()
+        sorted_by_Client_name.close()
 
         if_error_occured(got_error=False, error='') #calls mail sender script
 
